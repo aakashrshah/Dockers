@@ -30,11 +30,9 @@ forecast_col = 'Adj. Close' #Label variable
 
 df.fillna(-99999,inplace=True)
 
-forecast_out = int(math.ceil(0.01*len(df)))
-print(df.tail())
-df['label'] = df[forecast_col].shift(-forecast_out)
+forecast_out = 10
+df['label'] = df[forecast_col]
 df.dropna(inplace=True)
-print(df.tail())
 
 ##Make X,Y and Split Data
 X = np.array(df.drop(['label'],1))
@@ -73,5 +71,5 @@ df['Forecast'].plot()
 plt.legend(loc=4)
 plt.xlabel('Date')
 plt.ylabel('Price')
-#plt.show()
+plt.show()
 #print(df.tail())
