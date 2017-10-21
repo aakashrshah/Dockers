@@ -31,3 +31,9 @@ To run the docker file use the following command. Specially for the tensorflow v
 
 		docker run -it -p 8888:8888 -p 0.0.0.0:7007:6006 username/genji:latest	(For Mac)
 		docker run -it -p 8888:8888 -p 7007:6006 bombear/bastions:latest	(For Linux)
+
+To run a volume which is synced with your host and your docker
+
+		docker run -it -p 8888:8888 -p 7007:6006 -v /home/bombear/workspace/Dockers/Bastions/:/notebooks/ bombear/bastions:latest
+
+
